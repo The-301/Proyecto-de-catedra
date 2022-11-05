@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormControl,FormGroup, FormGroupName, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { MedicineService } from 'src/app/services/medicine.service';
 
 @Component({
@@ -10,10 +12,14 @@ import { MedicineService } from 'src/app/services/medicine.service';
 export class CreateMedicineComponent implements OnInit {
   createMedicine: FormGroup;
   submitted = false;
+  loading = false;
+
 
   constructor(
               private fb: FormBuilder,
-              private _medicineService: MedicineService ) {
+              private _medicineService: MedicineService,
+              private router: Router,
+              private toastr: ToastrService,) {
     this.createMedicine = this.fb.group({
       codigo: ['',Validators.required,],
       medicamento: ['', Validators.required],
@@ -45,11 +51,14 @@ export class CreateMedicineComponent implements OnInit {
 
     }
 
-
+    this.loading = true;
     this._medicineService.agregarMedicina(medicina).then(() =>{
-      alert('Medicina registrada con exito!');
+      this.toastr.success('Medicamento Registrado con Exito!', 'Medicamento Registrado');
+      this.loading = false;
+      this.router.navigate(['/main']);
     }).catch((error: any) =>{
       console.log(error);
+      this.loading =false;
     });
         
   }
