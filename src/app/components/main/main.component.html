@@ -3,13 +3,14 @@
 <div class="container" >
     <div class="card">
         <div class="card-body">
-            <span class="h3 float-">Tus medicamentos</span>
+            <span class="h1">Tus Medicamentos</span>
             <!--Buton dirige a create-medicina-->
             <button class="btn btn-dark btn-lg float-end" routerLink="/create-medicine">Agregar</button>
             <!--Tabla de medicina-->
             <table class="table table-striped mt-5">
-                <thead>
+                <thead >
                   <tr>
+                    <th>Codigo</th>
                     <th>Medicamento</th>
                     <th>Dosis recetada</th>
                     <th>Horario de dosis</th>
@@ -18,14 +19,15 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td >1</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                  <tr *ngFor="let medicina of medicinas">
+                    <td style="margin-top:55% ;">{{medicina.codigo}}</td>
+                    <td>{{medicina.medicamento}}</td>
+                    <td>{{medicina.dosis}}</td>
+                    <td>{{medicina.horario}}</td>
+                    <td>{{medicina.funcion}}</td>
                     <td>
-                      <i class="fas fa-edit fa-lg text-info" style="margin-right:5%;"></i>
-                      <i class="fas fa-trash-alt fa-lg text-danger"></i>
+                      <i class=" mr-4 fas fa-edit fa-lg text-info" ></i>
+                      <i (click)="eliminarMedicina(medicina.id)" class="fas fa-trash-alt fa-lg text-danger"></i>
                     </td>
                   </tr>
                 </tbody>

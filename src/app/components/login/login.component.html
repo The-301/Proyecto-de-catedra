@@ -5,7 +5,11 @@
         <div class="col-lg-6 offset-lg-3">
             <div class="card">
                 <div class="card-body">
-                    <div class="text-center"><h2>Ingresa tu Usuario</h2></div>
+                    <div class="text-center"><h2>Ingresa tu Usuario
+                        <div *ngIf="loading" class="spinner-border text-danger float-end" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                          </div>
+                    </h2></div>
                     <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
                         <div class="mb-3">
                             <label class="form-label"><b>Email</b></label>
