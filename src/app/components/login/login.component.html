@@ -1,0 +1,31 @@
+
+
+<div class="position-center container pt-5">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="text-center"><h2>Ingresa tu Usuario</h2></div>
+                    <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+                        <div class="mb-3">
+                            <label class="form-label"><b>Email</b></label>
+                            <input type="text" class="form-control" formControlName="email">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label"><b>Password</b></label>
+                            <input type="password" class="form-control" formControlName="password">
+                        </div><br>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-dark btn-lg mr-3">Login</button>
+                            <button class="btn btn-lg btn-danger" (click)="onClick()">Login With Google</button>
+                        </div>
+                        <br><br>
+                        <div class="text-left"><p>Aun no tienes cuenta? <button id="btn" class="btn" routerLink="/register">Registrate</button></p></div>
+                        
+                    </form>
+            
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

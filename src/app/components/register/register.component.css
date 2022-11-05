@@ -1,0 +1,19 @@
+form{
+    width: 85%;
+    margin-left: 10%;
+    height: 50%;
+    position: center;
+    font-size: 120%;  
+}
+.container{
+    margin-top: 10%;
+}
+#btn1{
+    color: rgb(0, 102, 255);
+    text-decoration: underline;
+    font-size: large;
+    font-size: 115%;
+}
+p{
+    font-size: 125%;
+}

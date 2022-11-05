@@ -1,0 +1,93 @@
+<app-navbar></app-navbar>
+<div class="container pt-3 ">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="text-center mt-3"> Agregar Medicamento</h3><br>
+                    <div class="text-center">
+                        <span *ngIf="submitted && createMedicine.invalid" class="badge badge-danger">Todos los campos son obligatorios</span>
+                    </div>
+                    <!--Se agrega el formulario de creacion de empleados-->
+                    <form class="mt-3" [formGroup]="createMedicine" (ngSubmit)="agregarMedicina()">
+                      
+                        <div class="row">
+                            <div class="col">
+                                <label class="form h5">Agrega el codigo del medicamento</label>
+                                <input type="text" class="form-control form-control-lg" formControlName="codigo" placeholder="Medicamento"><br>
+                            </div>
+                        </div>
+                            <label class="form h5">Agrega el nombre del medicamento</label>
+                            <input type="text" class="form-control form-control-lg" formControlName="medicamento" placeholder="Medicamento"><br>
+                            <label class="form h5">Agrega la dosis recetada del medicamento:</label>
+                            <input type="text" class="form-control form-control-lg" formControlName="dosis" placeholder="Dosis del medicamento"><br>
+                            <label class="form h5">Agrega el horario de tu dosis:</label>
+                            <input type="text" class="form-control form-control-lg" formControlName="horario" placeholder="horario de dosis"><br>
+                            <label class="form h5">Agrega la función del medicamento:</label>
+                            <input type="text" class="form-control form-control-lg" formControlName="funcion" placeholder="Función"><br>
+                            <div class="mt-2 text-center">
+                                <button type="submit" class="btn btn-dark btn-lg mr-3">Agregar</button>
+                                <button type="text" class="btn btn-dark btn-lg" routerLink="/list-medicina">Volver</button>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<app-navbar></app-navbar>
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-log-6 offset-lg-1">
+            <div class="card">
+                <div class="card-boy"><br>
+                    <h3 class="text-center mt-3">Agregar Medicamento</h3>
+                    <form class="mt-4" [formGroup]="createMedicine" (ngSubmit)="agregarMedicina()">
+                        <span *ngIf="submitted && createMedicine.invalid" class="badge badge-danger">TODOS LOS CAMPOS SON OBLIGATORIOS</span>
+                        <div>
+                            <input type="text" class="form-control-lg mt-3" formControlName="codigo" placeholder="N°"><br><br>
+                            <input type="text" class="form-control-lg" formControlName="medicamento" placeholder="Medicamento"><br><br>
+                            <input type="text" class="form-control-lg" formControlName="dosis" placeholder="Dosis"><br><br>
+                            <input type="text" class="form-control-lg" formControlName="horario" placeholder="Horario"><br><br>
+                            <input type="text" class="form-control-lg" formControlName="funcion" placeholder="Función"> <br><br> 
+                        </div>
+                        <div class="mr-3">
+                            <button class="btn btn-secondary btn-dark btn-lg"><a routerLink="/main">Volver</a></button>
+                            <button type="Submit" class="btn btn-dark btn-lg">Agregar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+<!--<form [formGroup]="createMedicine" (ngSubmit)="agregarMedicina">
+    <span *ngIf="submitted && createMedicine.invalid" class="badge badge-danger">TODOS LOS CAMPOS SON OBLIGATORIOS</span>
+    <div class="mb-3">
+      <label class="form-label" >Codigo</label>
+      <input type="number" class="form-control" formControlName="codigo" placeholder="N°">
+      <div class="form-text">Indica el codigo del Medicamento</div>
+    </div>
+    <div class="mb-3">
+        <label  class="form-label" >Medicamento</label>
+        <input type="text" class="form-control" formControlName="medicamento" placeholder="Medicamento">
+        <div class="form-text">Indica el Nombre del Medicamento</div>
+      </div>
+      <div class="mb-3">
+        <label  class="form-label" >Dosis</label>
+        <input type="text" class="form-control" formControlName="dosis" placeholder="Dosis">
+        <div class="form-text">Indica la dosis del Medicamento</div>
+      </div>
+      <div class="mb-3">
+        <label  class="form-label" >Horario de dosis</label>
+        <input type="text" class="form-control" formControlName="horario" placeholder="Horario de dosis">
+        <div class="form-text">Indica el tiempo de cada dosis</div>
+      </div>
+      <div class="mb-3">
+        <label  class="form-label" >Funcion</label>
+        <input type="text" class="form-control" formControlName="funcion" placeholder="Funcion">
+        <div class="form-text">Indica el efecto del Medicamento</div>
+      </div>
+    <button type="submit" class="btn btn-secondary btn-dark btn-lg">Agregar</button>
+    <button class="btn btn-secondary btn-dark btn-lg"><a routerLink="/main">Volver</a></button>
+  </form> -->
