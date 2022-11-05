@@ -19,4 +19,8 @@ export class MedicineService {
    eliminarMedicina(id: string): Promise<any>{
     return this.firestore.collection('medicinas').doc(id).delete();
    }
+
+   getMedicinas(id: string): Observable<any>{
+    return this.firestore.collection('medicinas').doc(id).snapshotChanges();
+   }
 }

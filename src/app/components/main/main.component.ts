@@ -43,7 +43,7 @@ export class MainComponent implements OnInit {
 
   eliminarMedicina(id: string){
     this.medicineService.eliminarMedicina(id).then(() => {
-      this.toastr.success('Medicamento Eliminado con Exito!', 'Medicamento Eliminado');
+      this.toastr.error('Medicamento Eliminado con Exito!', 'Medicamento Eliminado');
     }).catch(error =>{
       console.log(error);
     })

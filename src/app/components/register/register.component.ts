@@ -37,7 +37,7 @@ export class RegisterComponent implements OnInit {
         this.loading = false;
         this.router.navigate(['/login']);
       })
-      .catch(error => {
+      .catch(error => {this.loading = false;
         this.toastr.error(error, 'Fallo al registrar');});
   }
 

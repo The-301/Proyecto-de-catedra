@@ -4,7 +4,7 @@
         <div class="col-lg-6 offset-lg-3">
             <div class="card">
                 <div class="card-body">
-                    <h3 class="text-center mt-3"> Agregar Medicamento
+                    <h3 class="text-center mt-3"> {{ titulo}}
                         <div *ngIf="loading" class="spinner-border text-danger float-end" role="status">
                         <span class="visually-hidden">Loading...</span>
                       </div></h3><br>
@@ -17,7 +17,7 @@
                         <div class="row">
                             <div class="col">
                                 <label class="form h5">Agrega el codigo del medicamento</label>
-                                <input type="text" class="form-control form-control-lg" formControlName="codigo" placeholder="Medicamento"><br>
+                                <input type="text" class="form-control form-control-lg" formControlName="codigo" placeholder="Codigo de al menos 4 digitos"><br>
                             </div>
                         </div>
                             <label class="form h5">Agrega el nombre del medicamento</label>
@@ -38,59 +38,3 @@
         </div>
     </div>
 </div>
-<!--<app-navbar></app-navbar>
-<div class="container pt-5">
-    <div class="row">
-        <div class="col-log-6 offset-lg-1">
-            <div class="card">
-                <div class="card-boy"><br>
-                    <h3 class="text-center mt-3">Agregar Medicamento</h3>
-                    <form class="mt-4" [formGroup]="createMedicine" (ngSubmit)="agregarMedicina()">
-                        <span *ngIf="submitted && createMedicine.invalid" class="badge badge-danger">TODOS LOS CAMPOS SON OBLIGATORIOS</span>
-                        <div>
-                            <input type="text" class="form-control-lg mt-3" formControlName="codigo" placeholder="N°"><br><br>
-                            <input type="text" class="form-control-lg" formControlName="medicamento" placeholder="Medicamento"><br><br>
-                            <input type="text" class="form-control-lg" formControlName="dosis" placeholder="Dosis"><br><br>
-                            <input type="text" class="form-control-lg" formControlName="horario" placeholder="Horario"><br><br>
-                            <input type="text" class="form-control-lg" formControlName="funcion" placeholder="Función"> <br><br> 
-                        </div>
-                        <div class="mr-3">
-                            <button class="btn btn-secondary btn-dark btn-lg"><a routerLink="/main">Volver</a></button>
-                            <button type="Submit" class="btn btn-dark btn-lg">Agregar</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>-->
-<!--<form [formGroup]="createMedicine" (ngSubmit)="agregarMedicina">
-    <span *ngIf="submitted && createMedicine.invalid" class="badge badge-danger">TODOS LOS CAMPOS SON OBLIGATORIOS</span>
-    <div class="mb-3">
-      <label class="form-label" >Codigo</label>
-      <input type="number" class="form-control" formControlName="codigo" placeholder="N°">
-      <div class="form-text">Indica el codigo del Medicamento</div>
-    </div>
-    <div class="mb-3">
-        <label  class="form-label" >Medicamento</label>
-        <input type="text" class="form-control" formControlName="medicamento" placeholder="Medicamento">
-        <div class="form-text">Indica el Nombre del Medicamento</div>
-      </div>
-      <div class="mb-3">
-        <label  class="form-label" >Dosis</label>
-        <input type="text" class="form-control" formControlName="dosis" placeholder="Dosis">
-        <div class="form-text">Indica la dosis del Medicamento</div>
-      </div>
-      <div class="mb-3">
-        <label  class="form-label" >Horario de dosis</label>
-        <input type="text" class="form-control" formControlName="horario" placeholder="Horario de dosis">
-        <div class="form-text">Indica el tiempo de cada dosis</div>
-      </div>
-      <div class="mb-3">
-        <label  class="form-label" >Funcion</label>
-        <input type="text" class="form-control" formControlName="funcion" placeholder="Funcion">
-        <div class="form-text">Indica el efecto del Medicamento</div>
-      </div>
-    <button type="submit" class="btn btn-secondary btn-dark btn-lg">Agregar</button>
-    <button class="btn btn-secondary btn-dark btn-lg"><a routerLink="/main">Volver</a></button>
-  </form> -->

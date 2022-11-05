@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
         this.loading = false;
         this.router.navigate(['/main'])
       })
-      .catch(error => {
+      .catch(error => {this.loading = false;
         this.toastr.error(error, 'Fallo al ingresar');
       });
   }
@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
         console.log(response);
         this.router.navigate(['/view']);
       })
-      .catch(error => {
+      .catch(error => {this.loading = false;
         console.log(error);})
   }
 
