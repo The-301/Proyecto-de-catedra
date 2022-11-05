@@ -12,7 +12,7 @@
                         <span *ngIf="submitted && createMedicine.invalid" class="badge badge-danger">Todos los campos son obligatorios</span>
                     </div><br>
                     <!--Se agrega el formulario de creacion de empleados-->
-                    <form class="mt-3" [formGroup]="createMedicine" (ngSubmit)="agregarMedicina()">
+                    <form class="mt-3" [formGroup]="createMedicine" (ngSubmit)="agregarEditarMedicina()">
                       
                         <div class="row">
                             <div class="col">

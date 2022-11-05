@@ -40,13 +40,26 @@ export class CreateMedicineComponent implements OnInit {
     this.esEditar();
   }
  //Metodos de creacion 
-  agregarMedicina(){
+  agregarEditarMedicina(){
     
     this.submitted = true;
 
     if(this.createMedicine.invalid){
       return;
     }
+
+    if(this.id == null){
+      this.agregarMedicina();
+    }
+    else{
+      this.editarMedicina(this.id);
+    }
+    
+        
+  }
+
+  agregarMedicina(){
+    this.titulo = 'Agregar Medicamento'
     const medicina: any = {
       codigo: this.createMedicine.value.codigo,
       medicamento: this.createMedicine.value.medicamento,
@@ -55,7 +68,6 @@ export class CreateMedicineComponent implements OnInit {
       funcion: this.createMedicine.value.funcion,
       fechaCreacion: new Date(),
       fechaActualizacion: new Date(),
-
     }
 
     this.loading = true;
@@ -67,11 +79,30 @@ export class CreateMedicineComponent implements OnInit {
       console.log(error);
       this.loading =false;
     });
-        
+
   }
+  editarMedicina(id: string){ 
+    const medicina: any = {
+      codigo: this.createMedicine.value.codigo,
+      medicamento: this.createMedicine.value.medicamento,
+      dosis: this.createMedicine.value.dosis,
+      horario: this.createMedicine.value.horario,
+      funcion: this.createMedicine.value.funcion,
+      fechaActualizacion: new Date(),
+    }
+
+    this.loading =true;
+    this._medicineService.actualizarMedicina(id, medicina).then(() => {
+      this.loading =false;
+      this.toastr.info('La informacion fue actualizada con exito!','Medicamento modificado')
+    })
+    this.router.navigate(['/main']);
+   }
+
   esEditar(){
-    this.titulo = 'Editar Medicamento'
+   
     if(this.id !== null){
+      this.titulo = 'Editar Medicamento'
       this.loading = true;
       this._medicineService.getMedicinas(this.id).subscribe(data => {
         this.loading = false;

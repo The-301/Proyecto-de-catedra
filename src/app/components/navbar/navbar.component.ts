@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -11,16 +12,18 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private router: Router) { }
+    private router: Router,
+    private toastr: ToastrService,) { }
 
   ngOnInit(): void {
   }
   onClick(){
     this.userService.logout()
     .then(()=>{
-      this.router.navigate(['/login'])
+      this.toastr.success('Has cerrado la sesion!', 'Sesion cerrada');
+      this.router.navigate(['/register'])
     })
-    .catch( error => console.log(error));
+    .catch( error => {this.toastr.error('No se pudo cerrar sesion!', 'Fallo cerrar sesion');});
   }
 
 }

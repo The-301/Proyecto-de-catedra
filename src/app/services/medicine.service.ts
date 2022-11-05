@@ -23,4 +23,8 @@ export class MedicineService {
    getMedicinas(id: string): Observable<any>{
     return this.firestore.collection('medicinas').doc(id).snapshotChanges();
    }
+
+   actualizarMedicina(id: string, data:any): Promise<any>{
+    return this.firestore.collection('medicinas').doc(id).update(data);
+   }
 }

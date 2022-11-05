@@ -32,10 +32,10 @@ export class LoginComponent implements OnInit {
     this.loading = true;
     this.userService.login(this.formLogin.value)
       .then(response => {
-        this.toastr.success('Bienvenido', 'Autenticación Exitosa');
+        this.toastr.success('Bienvenido!', 'Autenticación Exitosa');
         console.log(response);
         this.loading = false;
-        this.router.navigate(['/main'])
+        this.router.navigate(['/view'])
       })
       .catch(error => {this.loading = false;
         this.toastr.error(error, 'Fallo al ingresar');

@@ -8,14 +8,14 @@ import { CreateMedicineComponent } from './components/create-medicine/create-med
 import { ViewComponent } from './components/view/view.component';
 
 const routes: Routes = [
- 
+  { path: '', pathMatch: 'full', redirectTo: '/login' },
   { path: 'view', component: ViewComponent},
   { path: 'main', component: MainComponent, ...canActivate(() => redirectUnauthorizedTo(['/login']))},
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'create-medicine', component: CreateMedicineComponent},
   { path: 'editMedicine/:id', component: CreateMedicineComponent},
-  { path: '', pathMatch: 'full', redirectTo: '/login' },
+  
 ];
 
 @NgModule({
