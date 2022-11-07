@@ -28,7 +28,7 @@ Luego de eso al abrir el proyecto te recomiendo ejecutes los siguientes comandos
 ### Añadir angular-firebase
 
 ```ruby
-ng add@angular-firebase
+ng add @angular/fire
 ```
 
 ### agrega el bootstrap
